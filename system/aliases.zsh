@@ -9,15 +9,6 @@ then
   alias la='gls -A --color'
 fi
 
-# todo.sh: https://github.com/ginatrapani/todo.txt-cli
-function t() {
-  if [ $# -eq 0 ]; then
-    todo.sh ls
-  else
-    todo.sh $*
-  fi
-}
-
 
 # implement pbcopy/pbpaste on linux - http://jetpackweb.com/blog/2009/09/23/pbcopy-in-ubuntu-command-line-clipboard/
 if [ `uname` = "Linux" ]; then
@@ -41,9 +32,6 @@ function s() {
 
 # rip cd
 alias ripcd="abcde -a cddb,read,encode,tag,move,playlist,clean -d /dev/cdrom -o m4a -V -x"
-
-# poor mans vpn
-alias svpn="spwd;cd ~/bin/sshuttle && git reset --hard && git pull && ./sshuttle --dns -vvr ghuntley@pbwh.org 0/0; lpwd"
 
 # youtube-dl
 alias youtube='youtube-dl  -o "%(title)s-%(id)s.%(ext)s" $*'
