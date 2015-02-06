@@ -1,4 +1,4 @@
-# ghuntley does dotfiles
+# megabytemb does dotfiles
 
 ## dotfiles
 
