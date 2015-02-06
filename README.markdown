@@ -6,9 +6,10 @@ Your dotfiles are how you personalize your system. These are mine.
 
 ## install
 
-- `git clone git://github.com/ghuntley/dotfiles ~/.dotfiles`
+- `git clone git://github.com/megabytemb/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
-- `rake install`
+- `./bootstrap`
+- `./install`
 
 The install rake task will symlink the appropriate files in `.dotfiles` to your
 home directory. Everything is configured and tweaked within `~/.dotfiles`,
