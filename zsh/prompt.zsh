@@ -10,13 +10,19 @@ git_dirty() {
   st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
-    echo ""
+	  st=$(/usr/bin/git status 2>/dev/null | tail -n 2)
+	  if [[ $st == "" ]]
+	  then
+		  echo ""
+	  else
+		  echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
+	  fi
   else
     if [[ $st == "nothing to commit (working directory clean)" || $st == "nothing to commit, working directory clean" ]]
     then
-      echo " (%{$fg[green]%}$(git_prompt_info)%{$reset_color%})"
+      echo " (%{$fg[green]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
     else
-      echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%})"
+      echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
     fi
   fi
 }
@@ -46,7 +52,7 @@ need_push () {
   then
     echo ""
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo ":%{$fg_bold[magenta]%}unpushed%{$reset_color%}"
   fi
 }
 
@@ -80,7 +86,7 @@ directory_name(){
   echo "%{$fg[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'$(username_prompt)@$(hostname_prompt):$(directory_name)$(project_name_color)$(git_dirty)$(need_push)$ '
+export PROMPT=$'$(username_prompt)@$(hostname_prompt):$(directory_name)$(project_name_color)$(git_dirty)$ '
 set_prompt () {
   export RPROMPT="%{$fg_bold[grey]%}$(todo)%{$reset_color%}"
 }
