@@ -27,7 +27,7 @@
 [apply]
         whitespace = nowarn
 [github]
-        user = ghuntley
+        user = megabytemb
         token =
 [mergetool]
         keepBackup = false

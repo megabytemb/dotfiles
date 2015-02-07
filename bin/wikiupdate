@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Version: v1.0
-# github.com/ghuntley/
+# github.com/megabytemb/
 #
 from __future__ import with_statement
 import sys, string, xmlrpclib, re, os, ConfigParser, commands, htmllib
