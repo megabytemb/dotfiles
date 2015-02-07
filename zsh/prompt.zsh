@@ -12,11 +12,11 @@ git_dirty() {
   then
     echo ""
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]
+    if [[ $st == "nothing to commit (working directory clean)" || $st == "nothing to commit, working directory clean" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo " (%{$fg[green]%}$(git_prompt_info)%{$reset_color%})"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%})"
     fi
   fi
 }
@@ -44,14 +44,17 @@ unpushed () {
 need_push () {
   if [[ $(unpushed) == "" ]]
   then
-    echo " "
+    echo ""
   else
     echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
   fi
 }
 
 hostname_prompt(){
-  echo "at %{$fg_bold[yellow]%}$(hostname)%{$reset_color%}"
+  echo "%{$fg[yellow]%}$(hostname)%{$reset_color%}"
+}
+username_prompt(){
+  echo "%{$fg[magenta]%}%n%{$reset_color%}"
 }
 
 # This keeps the number of todos always available the right hand side of my
@@ -74,10 +77,10 @@ todo(){
 }
 
 directory_name(){
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(hostname_prompt) in $(directory_name) $(project_name_color)$(git_dirty)$(need_push)\n› '
+export PROMPT=$'$(username_prompt)@$(hostname_prompt):$(directory_name)$(project_name_color)$(git_dirty)$(need_push)$ '
 set_prompt () {
   export RPROMPT="%{$fg_bold[grey]%}$(todo)%{$reset_color%}"
 }

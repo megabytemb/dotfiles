@@ -7,8 +7,8 @@
 # can symlink ~/.gitconfig to this file and go rock out with your git out!
 
 [user]
-        name = Geoffrey Huntley
-        email =
+	name = Michael Benz
+	email = michael@megabytemb.com
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
