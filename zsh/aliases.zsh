@@ -12,7 +12,7 @@ if [[ $platform == 'osx' ]]; then
 	# This shows remaining/total build files.
 	export NINJA_STATUS="[%u/%t] "
 
-	alias make_chromium="time caffeinate ninja -C ~/Code/chromium/src/out/Release chrome"
+	alias make_chromium="cd ~/Code/chromium/;time caffeinate ninja -C src/out/Release chrome"
 	alias go_chromium="~/Code/chromium/src/out/Release/Chromium.app/Contents/MacOS/Chromium --no-default-browser-check --disable-hang-monitor"
 	alias tests="time caffeinate ninja -C ~/Code/chromium/src/out/Release unit_tests browser_tests"
 fi
