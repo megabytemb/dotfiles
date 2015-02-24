@@ -3,7 +3,7 @@
 # if it's different from the currently installed version.
 set -e
 
-build_url="http://build.chromium.org/buildbot/snapshots/chromium-rel-mac"
+build_url="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac"
 install_dir="/Applications/Chromium.app"
 
 # determine the currently installed chromium build number
@@ -16,7 +16,7 @@ test -d "$install_dir" && current=$(
 )
 
 # most recent version build available from google
-latest=$(curl -s "$build_url/LATEST")
+latest=$(curl -s "$build_url/LAST_CHANGE")
 if [ "$current" != "$latest" ]; then
     echo "==> Fetching Chromium build $latest" 1>&2
 
