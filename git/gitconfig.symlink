@@ -20,6 +20,7 @@
         diff = auto
         status = auto
         branch = auto
+	ui = true
 [core]
         excludesfile = ~/.gitignore
         editor = nano
