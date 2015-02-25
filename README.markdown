@@ -18,6 +18,12 @@ though.
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
+## ongoing updates
+
+- `dotupdate`
+
+Wasn't that simple?
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your
