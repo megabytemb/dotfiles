@@ -8,7 +8,6 @@ alias reload!='. ~/.zshrc'
 if [[ $platform == 'osx' ]]; then
 	export PATH="$PATH":~/Code/depot_tools
 	export GYP_GENERATORS=ninja
-	export GYP_DEFINES='component=shared_library'
 	# This shows remaining/total build files.
 	export NINJA_STATUS="[%u/%t] "
 

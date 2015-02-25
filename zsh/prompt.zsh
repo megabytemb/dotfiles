@@ -10,13 +10,13 @@ git_dirty() {
   st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
-	  st=$(/usr/bin/git status 2>/dev/null | tail -n 2)
-	  if [[ $st == "" ]]
-	  then
-		  echo ""
-	  else
-		  echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
-	  fi
+      st=$(/usr/bin/git status 2>/dev/null | tail -n 2)
+      if [[ $st == "" ]]
+      then
+          echo ""
+      else
+          echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
+      fi
   else
     if [[ $st == "nothing to commit (working directory clean)" || $st == "nothing to commit, working directory clean" ]]
     then
@@ -86,7 +86,18 @@ directory_name(){
   echo "%{$fg[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'$(username_prompt)@$(hostname_prompt):$(directory_name)$(project_name_color)$(git_dirty)$ '
+emoji() {
+    current_folder=${PWD##*/}
+    if [[ $current_folder == 'love' && $platform == 'osx' ]]
+    then
+        echo "❤️ "
+    else
+        echo "$"
+    fi
+}
+
+
+export PROMPT=$'$(username_prompt)@$(hostname_prompt):$(directory_name)$(project_name_color)$(git_dirty)$(emoji) '
 set_prompt () {
   export RPROMPT="%{$fg_bold[grey]%}$(todo)%{$reset_color%}"
 }

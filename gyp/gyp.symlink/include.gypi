@@ -6,4 +6,7 @@
 
     # … other variables you may have ...
   },
+  'GYP_DEFINES':
+      'component=shared_library '
+      'fastbuild=1'
 }
