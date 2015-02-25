@@ -1,6 +1,8 @@
 alias dotmate='mate $ZSH'
 alias dotcd='cd $ZSH'
 
+alias dotupdate='cd $ZSH && git pull origin master && ./bootstrap && cd -'
+
 alias ping='ping -c 5' 
 
 alias reload!='. ~/.zshrc'
