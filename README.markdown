@@ -6,7 +6,7 @@ Your dotfiles are how you personalize your system. These are mine.
 
 ## install
 
-- `git clone git@github.com:megabytemb/dotfiles.git`
+- `git clone git@github.com:megabytemb/dotfiles.git ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `./bootstrap`
 - `./install`
