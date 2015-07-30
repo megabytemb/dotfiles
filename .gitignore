@@ -5,3 +5,4 @@ xmonad.errors
 xmonad.hi
 xmonad.o
 *.pyc
+irssi/irssi.symlink/away.log
