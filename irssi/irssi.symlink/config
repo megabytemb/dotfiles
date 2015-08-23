@@ -313,7 +313,10 @@ settings = {
     nick = "megabytemb";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "perl/core/scripts" = { tmux_away_active = "yes"; };
-  "fe-common/core" = { autolog = "yes"; };
+  "perl/core/scripts" = {
+    tmux_away_active = "yes";
+    nickcolor_colors = "2 3 4 5 6 7 9 10 11 12 13";
+  };
+  "fe-common/core" = { autolog = "yes"; theme = "xchat"; };
 };
 logs = { };
