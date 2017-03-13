@@ -18,7 +18,7 @@ git_dirty() {
           echo " (%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
       fi
   else
-    if [[ $st == "nothing to commit (working directory clean)" || $st == "nothing to commit, working directory clean" ]]
+    if [[ $st == "nothing to commit (working directory clean)" || $st == "nothing to commit, working directory clean" || $st == "nothing to commit, working tree clean" ]]
     then
       echo " (%{$fg[green]%}$(git_prompt_info)%{$reset_color%}$(need_push))"
     else
