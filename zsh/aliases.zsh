@@ -5,7 +5,7 @@ alias dotupdate='cd $ZSH && git pull origin master && ./bootstrap && cd -'
 
 alias tetris='emacs -q --no-splash -f tetris'
 
-alias ping='ping -c 5' 
+#alias ping='ping -c 5' 
 
 alias reload!='. ~/.zshrc'
 
